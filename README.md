@@ -1,5 +1,5 @@
 # Persistent & Shareable ToDo List for Everyone
-- You can have your own ToDo list that you can share or keep for yourself just by browsing to https://url/<your name or anything here>
+- You can have your own ToDo list that you can share or keep for yourself just by browsing to https://url/ (your name or anything here)
 - Made with: NodeJS, Express, EJS, MongoDB Atlas, Mongoose
 
 # Live
