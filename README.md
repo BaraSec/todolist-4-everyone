@@ -3,7 +3,11 @@
 - Made with: NodeJS, Express, EJS, MongoDB Atlas, Mongoose
 
 # Screenshots
+- Example A (a list at /Alex)
+
 ![screenshot1](https://raw.githubusercontent.com/BaraSec/todolist-4-everyone/main/image.png)
+- Example B, (another list at /Bara, all lists are saved and editable separately)
+
 ![screenshot2](https://raw.githubusercontent.com/BaraSec/todolist-4-everyone/main/image2.png)
 
 # Usage
