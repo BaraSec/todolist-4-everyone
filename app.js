@@ -45,17 +45,24 @@ app.get("/", function (req, res) {
       });
       res.redirect("/");
     }
-    res.render("list", { listTitle: "Today", newItems: foundItems });
+    res.render("list", { listTitle: "Browse to /Alex, /Work, or /<anything> to have your new persistent and shareable list", newItems: foundItems });
   });
 });
 
 app.post("/", function (req, res) {
   let item = req.body.item;
   let listTitle = req.body.listTitle;
+  if(item === null || item === "") {
+    if (listTitle === "Browse to /Alex, /Work, or /<anything> to have your new persistent and shareable list") {
+      return res.redirect("/");
+    } else {
+        return res.redirect(listTitle);
+    }
+  }
   const itemDoc = new Item({
     name: item,
   });
-  if (listTitle === "Today") {
+  if (listTitle === "Browse to /Alex, /Work, or /<anything> to have your new persistent and shareable list") {
     itemDoc.save();
     res.redirect("/");
   } else {
@@ -69,7 +76,7 @@ app.post("/", function (req, res) {
 
 app.post("/delete", function (req, res) {
   let listTitle = req.body.listTitle;
-  if (listTitle === "Today") {
+  if (listTitle === "Browse to /Alex, /Work, or /<anything> to have your new persistent and shareable list") {
     Item.findOneAndDelete({ _id: req.body.checkbox }, function (err, result) {
       if (err) {
         console.log(err);
